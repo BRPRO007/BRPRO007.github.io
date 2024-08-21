@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img class="img" src="./M.jpg" alt="Foto de Mateus">
+        <h1>Mateus Daniel Dias Silva</h1>
+        <nav>
+            <a href="#about">Sobre Mim</a>
+            <a href="#projects">Projetos</a>
+            <a href="#objetivo">Objetivo</a>
+            <a href="#formaçao">Formação</a>
+            <a href="#experiencias">Experiências</a>
+            <a href="#contact">Contato</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Sou Mateus Daniel, um estudante apaixonado por programação e tecnologia. Estou aprendendo JavaScript e
+            explorando o desenvolvimento web. Este portfólio foi criado para mostrar alguns dos meus projetos e
+            habilidades.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projetos</h2>
+
+        <div class="btn-group">
+            <button class="filter-btn active" onclick="filterProjects('all')">Todos</button>
+            <button class="filter-btn" onclick="filterProjects('javascript')">JavaScript</button>
+            <button class="filter-btn" onclick="filterProjects('web')">Web Design</button>
+        </div>
+
+        <div class="project javascript">
+            <h3>Projeto 1: Jogo em JavaScript</h3>
+            <a href="https://github.com/BRPRO007/Jogo-da-Velha-.git">
+                <img style="height: 100px" src="jogo da velha.png" alt="Jogo da velha">
+            </a>
+        </div>
+
+        <div class="project web">
+            <h3>Projeto 2: Site de Pizzaria</h3>
+            <a href="https://github.com/BRPRO007/Trabalho-Avaliativo.git">
+                <img style="height: 100px" src="e-commerce.png" alt="site pizzaria">
+            </a>
+        </div>
+
+    </section>
+
+    <section id="objetivo">
+        <h2>Objetivo</h2>
+        <p>Gostaria de atuar como Desenvolvedor Front-End, utilizando minhas habilidades em JavaScript e CSS para
+            contribuir
+            com a criação de aplicações web eficientes e responsivas. Estou comprometido em aprender e crescer na área,
+            ajudando a resolver
+            desafios técnicos e melhorar a experiência do usuário.
+        </p>
+    </section>
+
+    <section id="formaçao">
+        <h2>Formação</h2>
+        <p>
+            08/04/2024 - 16/06/2024 | Senac / São Leopoldo
+            <br>
+            TI - JavaScript / Soft-Skills
+        </p>
+        <p>
+            08/07/2024 - Cursando | Senac / Unisinos
+            <br>
+            Front-End / React
+        </p>
+    </section>
+
+    <section id="experiencias">
+        <h2>Experiências</h2>
+        <p>
+            2020/2022 | Empresa Vidraçaria Cristal Plus
+            <br>
+            Auxiliar de Vidraceiro
+            <br>
+            Auxiliar na carga e descarga de ferramentas e vidros, garantindo a segurança e integridade dos materiais.
+            Suporte na montagem e instalação de vidro, seguindo as orientações do líder.
+        </p>
+        <p>
+            2022/2023 | Empresa Funilaria Clair
+            <br>
+            Auxiliar de Funileiro
+            <br>
+            Auxiliar na carga e descarga de ferramentas e vidros, garantindo a segurança e integridade dos materiais.
+            Colaborador com a equipe na organização e limpeza do local de trabalho.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <p>Telefone: (51) 98515-0111 / (51) 99664-8850 / (51) 99965-8259 </p>
+        <p>Email: ms316220@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mateus. Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            projects.forEach(project => {
+                if (category === 'all' || project.classList.contains(category)) {
+                    project.classList.add('active');
+                } else {
+                    project.classList.remove('active');
+                }
+            });
+
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
